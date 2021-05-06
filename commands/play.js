@@ -7,5 +7,5 @@ module.exports.run = async (bot, message, args, color, distube) => {
 
 module.exports.config = {
 	name: 'play',
-	aliases: ['p', 'PLAY', ]
+	aliases: ['p']
 }

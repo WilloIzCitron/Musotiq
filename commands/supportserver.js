@@ -10,5 +10,5 @@ module.exports.run = async (bot, message, args, color, distube) => {
 
 module.exports.config = {
     name: "supportserver",
-    aliases: []
+    aliases: ['support']
 }
