@@ -1,10 +1,6 @@
 const Discord = require('discord.js');
-const reply = require('discord-reply');
 const db = require('quick.db');
-const canvacord = require('canvacord');
 const DisTube = require('distube');
-const canvas = require('discord-canvas');
-const ms = require('ms');
 const fs = require('fs');
 const keepAlive = require('./server');
 const mySecret = process.env['token'];
@@ -43,9 +39,49 @@ bot
 	.on('message', async message => {
 		if (message.author.bot) return;
 
+/*        const PREFIX = db.get(`guild_${message.guild.id}_prefix`) || "M!"
+        if (!message.content.startsWith(PREFIX)) return
+
+        const args = message.content.substring(PREFIX.length).split(" ")
+
+        const nopermsoof = new Discord.MessageEmbed()
+          .setTitle("Musotiq Sent an error!")
+          .setDescription("You dont have any permision to use this command!")
+          .setFooter("you need the MANAGE_SERVER permision, thats why bud")
+          .setColor("#ff0000")
+        const usedprefix = new Discord.MessageEmbed()
+          .setTitle("Musotiq Sent an error!")
+          .setDescription("this prefix is already being used!")
+          .setColor("#ff0000")
+        const bigassprefix = new Discord.MessageEmbed()
+          .setTitle("Musotiq Sent an error!")
+          .setDescription("a prefix cant be more than 3 characters!")
+          .setColor("#ff0000")
+        const wrongusage = new Discord.MessageEmbed()
+          .setTitle("Musotiq Sent an error")
+          .setDescription("Wrong usage! type ``M!prefix **perfix you want**``")
+          .setColor("#ff0000")
+        const sEmbed = new Discord.MessageEmbed()
+          .setColor(color)
+          .setTitle("Prefix Set!")
+          .setDescription(`set to ${args[0]}`)
+
+
+        if(message.content.startsWith(`${PREFIX}prefix`)) {
+            if (!message.member.hasPermmision("MANAGE_SERVER")) return message.channel.send(nopermsoof)
+            if (!args[1]) return message.channel.send(wrongusage)
+            if (args[1].length > 3) return message.channel.send(bigassprefix)
+            if(args[1] === db.get(`guild_${message.guild.id}_prefix`)) return message.channel.send(usedprefix)
+            if(args[1] === "M!") db.delete(`guild_${message.guild.id}_prefix`)
+            db.set(`guild_${message.guild.id}_prefix`, args[1])
+            return message.channel.send(sEmbed);
+        }**/
+
+
+
 		const messageArray = message.content.split(' ');
 		const cmd = messageArray[0];
-		const args = message.content
+        const args = message.content
 			.slice(cmd.length)
 			.trim()
 			.split(/ +g/);
