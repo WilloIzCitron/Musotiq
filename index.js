@@ -1,10 +1,11 @@
 const Discord = require('discord.js');
 const db = require('quick.db');
 const DisTube = require('distube');
+const ytdl = require('ytdl-core');
 const fs = require('fs');
 const keepAlive = require('./server');
 const mySecret = process.env['token'];
-const prefix = 'M!';
+
 
 const bot = new Discord.Client({
 	partials: ['MESSAGE', 'CHANNEL', 'REACTION']
@@ -20,6 +21,7 @@ const color = '#2187b8';
 
 bot.commands = new Discord.Collection();
 bot.aliases = new Discord.Collection();
+bot.config = require('../config.json');
 
 fs.readdir('./commands/', (err, files) => {
 	if (err) console.log(err);
@@ -39,10 +41,10 @@ bot
 	.on('message', async message => {
 		if (message.author.bot) return;
 
-/*        const PREFIX = db.get(`guild_${message.guild.id}_prefix`) || "M!"
+        const PREFIX = db.get(`guild_${message.guild.id}_prefix`) || "M!"
         if (!message.content.startsWith(PREFIX)) return
 
-        const args = message.content.substring(PREFIX.length).split(" ")
+        const prefixargs = message.content.substring(PREFIX.length).split(" ")
 
         const nopermsoof = new Discord.MessageEmbed()
           .setTitle("Musotiq Sent an error!")
@@ -64,20 +66,20 @@ bot
         const sEmbed = new Discord.MessageEmbed()
           .setColor(color)
           .setTitle("Prefix Set!")
-          .setDescription(`set to ${args[0]}`)
-
+          .setDescription(`set the prefix to **${prefixargs[1]}**`)
+        // embed done
 
         if(message.content.startsWith(`${PREFIX}prefix`)) {
-            if (!message.member.hasPermmision("MANAGE_SERVER")) return message.channel.send(nopermsoof)
-            if (!args[1]) return message.channel.send(wrongusage)
-            if (args[1].length > 3) return message.channel.send(bigassprefix)
-            if(args[1] === db.get(`guild_${message.guild.id}_prefix`)) return message.channel.send(usedprefix)
-            if(args[1] === "M!") db.delete(`guild_${message.guild.id}_prefix`)
-            db.set(`guild_${message.guild.id}_prefix`, args[1])
+            
+            if (!message.member.hasPermission("MANAGE_SERVER")) return message.channel.send(nopermsoof)
+            if (!prefixargs[1]) return message.channel.send(wrongusage)
+            if (prefixargs[1].length > 3) return message.channel.send(bigassprefix)
+            if(prefixargs[1] === db.get(`guild_${message.guild.id}_prefix`)) return message.channel.send(usedprefix)
+            if(prefixargs[1] === "M!") db.delete(`guild_${message.guild.id}_prefix`)
+            db.set(`guild_${message.guild.id}_prefix`, prefixargs[1])
             return message.channel.send(sEmbed);
-        }**/
-
-
+        }
+        // this is the command to change the prefix
 
 		const messageArray = message.content.split(' ');
 		const cmd = messageArray[0];
@@ -86,10 +88,13 @@ bot
 			.trim()
 			.split(/ +g/);
 
-		if (!message.content.startsWith(prefix)) return;
+		if (!message.content.startsWith(PREFIX)) return;
 		const commandfile =
-			bot.commands.get(cmd.slice(prefix.length)) ||
-			bot.commands.get(bot.aliases.get(cmd.slice(prefix.length)));
+			bot.commands.get(cmd.slice(PREFIX.length)) ||
+			bot.commands.get(bot.aliases.get(cmd.slice(PREFIX.length)));
+        if(!commandfile){
+            return
+        }
 		commandfile.run(bot, message, args, color, distube);
 	});
 
