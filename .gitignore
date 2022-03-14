@@ -106,3 +106,6 @@ dist
 #Data Base
 .sqlite
 
+#config files
+config.js
+
