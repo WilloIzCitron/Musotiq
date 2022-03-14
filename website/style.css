@@ -1,0 +1,100 @@
+@font-face {
+    font-family: Montserrat-Light;
+    src: url("../fonts/Montserrat-Light.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #24252A;
+    color: #edf0f1;
+}
+
+li, a, button {
+    font-family: 'Montserrat-Light', 'Montserrat';
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+
+.logo {
+    cursor: pointer;
+}
+
+.nav_bar_links{
+    list-style: none;
+}
+
+.nav_bar_links li {
+    display: inline-block;
+    padding: 0px 20px;  
+}
+
+.nav_bar_links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav_bar_links li a:hover {
+    color: #0088a9;
+}
+
+button {
+    padding: 9px 25px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: white;
+    color: rgba(0,136,169,1);
+}
+
+body {
+    font-family: 'Montserrat-Light', 'Montserrat';
+}
+
+h1 {
+    font-family: 'Montserrat-Light', 'Montserrat';
+}
+
+#Linking {
+    text-decoration-line: #0088A9;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: #0088A9;
+    text-decoration-thickness: 3px;
+}
+
+#Linking:hover {
+    color: #0088A9;
+    text-decoration-line: white;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: white;
+    text-decoration-thickness: 3px;
+    transition: all 0.3s ease 0s;
+}
+
+#underline {
+    font-family: 'Montserrat-Light', 'Montserrat';
+    text-decoration: wavy;
+    text-decoration-line: underline;
+    text-decoration-color: #0088A9;
+}
+/* 
+#discord-widget {
+    position: relative;
+    left: 50px;
+} */

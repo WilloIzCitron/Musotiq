@@ -1,0 +1,70 @@
+{
+  "files": {
+    ".gitignore": [
+      {
+        "id": "1907ac8f-16c2-4b63-b966-3dcf9d8e0b01",
+        "line": 38,
+        "version": 39,
+        "index": 665
+      }
+    ],
+    "commands/Others/filters.js": [
+      {
+        "id": "68e26648-63fa-465b-a172-0fa4fc83f8ee",
+        "line": 25,
+        "version": 3051,
+        "index": 1008
+      }
+    ],
+    "commands/Premium/cursed.js": [
+      {
+        "id": "c944978d-297f-4c3d-b5af-5d2a1da2a3fb",
+        "line": 6,
+        "version": 12,
+        "index": 216
+      }
+    ],
+    "commands/Voice Channel Commands/autoplay.js": [
+      {
+        "id": "18081432-2de3-4af8-8ae8-0663fa59977a",
+        "line": 25,
+        "version": 46,
+        "index": 779
+      }
+    ],
+    "commands/Voice Channel Commands/stop.js": [
+      {
+        "id": "9c4a2d8f-f8df-44e4-931a-7c936a630e85",
+        "line": 10,
+        "version": 95,
+        "index": 344
+      },
+      {
+        "id": "cdd305f4-8118-4c2c-bc90-51c72235867a",
+        "line": 26,
+        "version": 95,
+        "index": 843
+      }
+    ],
+    "index.js": [
+      {
+        "id": "2855ba16-5a48-4d22-9bc9-e44b33c0854f",
+        "line": 1113,
+        "version": 14700,
+        "index": 41877
+      },
+      {
+        "id": "6d1bbe04-630e-42d8-b425-d0aea5be67dc",
+        "line": 1113,
+        "version": 14700,
+        "index": 41877
+      },
+      {
+        "id": "91eae512-6478-4617-a457-cc6e51374988",
+        "line": 1113,
+        "version": 14700,
+        "index": 41877
+      }
+    ]
+  }
+}
